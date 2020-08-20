@@ -10,6 +10,9 @@ public class Matches
     public Matches() {
     }
 
+    Matches matches = new Matches();
+
+
     public Matches(int quantityMatches, int remainedMatches, int selectedMatches, int compNumber) {
         this.quantityMatches = quantityMatches;
         this.remainedMatches = remainedMatches;
