@@ -3,8 +3,7 @@ package edu.java.game;
 import java.util.Scanner;
 
 public class ComputerLogics extends Matches {
-    public void computerLogics()
-    {
+    public void computerLogics() {
         quantityMatches = 20;
 
         ConsoleMessages consoleMessages = new ConsoleMessages();
@@ -13,13 +12,19 @@ public class ComputerLogics extends Matches {
 
         while (subtractionMatches > 0) {
 
-            System.out.println("Введите число: ");
-
-            int compNumber = (int) ((Math.random() * 3) + 1);
-            System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
-            quantityMatches = (quantityMatches - compNumber);
+            if (quantityMatches > 4) {
+                System.out.println("Введите число: ");
+                int compNumber = (int) ((Math.random() * 3) + 1);
+                System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
+                quantityMatches = (quantityMatches - compNumber);
 //            consoleMessages.callRemainedMatches();
-            System.out.println("На столе осталось " + quantityMatches + " спичек.");
+                System.out.println("На столе осталось " + quantityMatches + " спичек.");
+            } else if (quantityMatches < 4) {
+                compNumber = 1;
+                System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
+                quantityMatches = (quantityMatches - compNumber);
+            }
+
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Введите число: ");
@@ -40,9 +45,7 @@ public class ComputerLogics extends Matches {
 //                consoleMessages.callRemainedMatches();
                 System.out.println("На столе осталось " + quantityMatches + " спичек");
             }
-            if (quantityMatches < 4) {
-                compNumber = 1;
-            }
+
 
         }
     }
