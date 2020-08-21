@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class ComputerLogics extends Matches {
     public void computerLogics()
     {
-//        Matches matches = new Matches();
-        setRemainedMatches = 20;
+        quantityMatches = 20;
 
         ConsoleMessages consoleMessages = new ConsoleMessages();
 
@@ -18,9 +17,9 @@ public class ComputerLogics extends Matches {
 
             int compNumber = (int) ((Math.random() * 3) + 1);
             System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
-            setRemainedMatches(getSetRemainedMatches() - compNumber);
+            quantityMatches = (quantityMatches - compNumber);
 //            consoleMessages.callRemainedMatches();
-            System.out.println("На столе осталось " + getRemainedMatches() + " спичек.");
+            System.out.println("На столе осталось " + quantityMatches + " спичек.");
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Введите число: ");
@@ -29,18 +28,22 @@ public class ComputerLogics extends Matches {
 
             if (peopleNumber > 0 && peopleNumber < 4) {
                 System.out.println(" - Количество выбранных человеком спичек: " + peopleNumber);
-                setRemainedMatches(getRemainedMatches() - peopleNumber);
+                quantityMatches = (quantityMatches - peopleNumber);
 //                consoleMessages.callRemainedMatches();
-                System.out.println("На столе осталось " + getRemainedMatches() + " спичек");
+                System.out.println("На столе осталось " + quantityMatches + " спичек");
+                subtractionMatches = quantityMatches;
             } else if (peopleNumber > 3) {
                 System.out.print("Вы не можете вводить больше 3, попробуйте снова.\nВведите число: ");
                 int peopleNumberRepeat = sc.nextInt();
                 System.out.println(" - Количество выбранных человеком спичек: " + peopleNumberRepeat);
-                setRemainedMatches(getSetRemainedMatches() - peopleNumberRepeat);
+                quantityMatches = (quantityMatches - peopleNumberRepeat);
 //                consoleMessages.callRemainedMatches();
-                System.out.println("На столе осталось " + getRemainedMatches() + " спичек");
-                subtractionMatches = setRemainedMatches;
+                System.out.println("На столе осталось " + quantityMatches + " спичек");
             }
+            if (quantityMatches < 4) {
+                compNumber = 1;
+            }
+
         }
     }
 }

@@ -4,7 +4,7 @@ public class ConsoleMessages extends Matches
 {
     public void callRemainedMatches() {
 
-        System.out.println("На столе осталось " + getRemainedMatches() + " спичек.");
+        System.out.println("На столе осталось " + quantityMatches + " спичек.");
     }
 
 //    public void callSelectedMatches() {
