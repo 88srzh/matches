@@ -12,19 +12,24 @@ public class ComputerLogics extends Matches {
 
         while (subtractionMatches > 0) {
 
-            if (quantityMatches > 4) {
-                System.out.println("Введите число: ");
-                int compNumber = (int) ((Math.random() * 3) + 1);
+            if (quantityMatches % 4 == 0) {
+                compNumber = 3;
                 System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
                 quantityMatches = (quantityMatches - compNumber);
-//            consoleMessages.callRemainedMatches();
                 System.out.println("На столе осталось " + quantityMatches + " спичек.");
-            } else if (quantityMatches < 4) {
+            } else if (quantityMatches == 2) {
                 compNumber = 1;
                 System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
                 quantityMatches = (quantityMatches - compNumber);
+                System.out.println("На столе осталось " + quantityMatches + " спичек.");
+            } else if (quantityMatches == 3) {
+                compNumber = 2;
+                System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
+                quantityMatches = (quantityMatches - compNumber);
+                System.out.println("На столе осталось " + quantityMatches + " спичек.");
+            } else if (quantityMatches == 0) {
+                System.out.println("Ты проиграл!");
             }
-
 
             Scanner sc = new Scanner(System.in);
             System.out.print("Введите число: ");
@@ -45,8 +50,6 @@ public class ComputerLogics extends Matches {
 //                consoleMessages.callRemainedMatches();
                 System.out.println("На столе осталось " + quantityMatches + " спичек");
             }
-
-
         }
     }
 }
