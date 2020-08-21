@@ -3,6 +3,7 @@ package edu.java.game;
 public class ConsoleMessages extends Matches
 {
     public void callRemainedMatches() {
+
         System.out.println("На столе осталось " + getRemainedMatches() + " спичек.");
     }
 

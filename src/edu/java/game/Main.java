@@ -2,14 +2,12 @@ package edu.java.game;
 
 public class Main {
 
-    public static void main(String[] args) {
-
-        Matches matches = new Matches();
-        matches.quantityMatches = 20;
-        ConsoleMessages consoleMessages = new ConsoleMessages();
-
+    public static void main(String[] args)
+    {
+//        ConsoleMessages consoleMessages = new ConsoleMessages();
+//        consoleMessages.callRemainedMatches();
             ComputerLogics computerLogics = new ComputerLogics();
-            computerLogics.computerLogics();
+                computerLogics.computerLogics();
     }
 }
 

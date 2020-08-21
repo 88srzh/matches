@@ -2,7 +2,7 @@ package edu.java.game;
 
 public class Matches
 {
-    int quantityMatches;
+    int setRemainedMatches;
     int remainedMatches;
     int selectedMatches;
     int compNumber;
@@ -10,11 +10,8 @@ public class Matches
     public Matches() {
     }
 
-    Matches matches = new Matches();
-
-
-    public Matches(int quantityMatches, int remainedMatches, int selectedMatches, int compNumber) {
-        this.quantityMatches = quantityMatches;
+    public Matches(int setRemainedMatches, int remainedMatches, int selectedMatches, int compNumber) {
+        this.setRemainedMatches = setRemainedMatches;
         this.remainedMatches = remainedMatches;
         this.selectedMatches = selectedMatches;
         this.compNumber = compNumber;
@@ -40,12 +37,12 @@ public class Matches
         this.selectedMatches = selectedMatches;
     }
 
-    public int getQuantityMatches() {
-        return quantityMatches;
+    public int getSetRemainedMatches() {
+        return setRemainedMatches;
     }
 
-    public void setQuantityMatches(int quantityMatches) {
-        this.quantityMatches = quantityMatches;
+    public void setSetRemainedMatches(int setRemainedMatches) {
+        this.setRemainedMatches = setRemainedMatches;
     }
 
     public int getRemainedMatches() {
@@ -59,7 +56,7 @@ public class Matches
     @Override
     public String toString() {
         return "Matches{" +
-                "quantityMatches=" + quantityMatches +
+                "quantityMatches=" + setRemainedMatches +
                 ", remainedMatches=" + remainedMatches +
                 ", selectedMatches=" + selectedMatches +
                 '}';
