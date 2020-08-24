@@ -7,7 +7,7 @@ public class ConsoleMessages extends Matches {
     }
 
     public void compLose() {
-        System.out.println("Осталась 1 спичка. Компьютер проиграл");
+        System.out.println("Осталась 1 спичка. Компьютер проиграл.");
     }
 }
 
