@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-            ComputerLogics computerLogics = new ComputerLogics();
-                computerLogics.computerLogics();
+        ComputerLogics computerLogics = new ComputerLogics();
+        computerLogics.computerLogics();
     }
 }

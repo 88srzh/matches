@@ -10,4 +10,3 @@ public class ConsoleMessages extends Matches {
         System.out.println("Осталась 1 спичка. Компьютер проиграл.");
     }
 }
-
