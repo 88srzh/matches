@@ -1,45 +1,62 @@
 package edu.java.game;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ComputerLogics extends Matches {
-    public void computerLogics()
-    {
-//        Matches matches = new Matches();
-        setRemainedMatches = 20;
+
+    public void computerLogics() throws IOException {
 
         ConsoleMessages consoleMessages = new ConsoleMessages();
 
-        int subtractionMatches = 20;
+        Scanner scanner = new Scanner(System.in);
 
-        while (subtractionMatches > 0) {
+        while (matches > 1) {
 
-            System.out.println("Введите число: ");
+            if (player % 2 == 0) {
+                int num = 1;
 
-            int compNumber = (int) ((Math.random() * 3) + 1);
-            System.out.println(" - Количество выбранных компьютером спичек: " + compNumber);
-            setRemainedMatches(getSetRemainedMatches() - compNumber);
-//            consoleMessages.callRemainedMatches();
-            System.out.println("На столе осталось " + getRemainedMatches() + " спичек.");
+                for (int i = 0; ; i++) {
+                    num += 4;
 
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Введите число: ");
-            int peopleNumber = sc.nextInt();
-//            sc.close();
+                    if (num > matches) {
+                        compNumber = matches - (num - 4);
+                        break;
+                    }
+                }
+                System.out.println("На столе осталось " + matches +
+                        " спичек\n - Количество выбранных компьютером спичек = " + compNumber);
+                matches -= compNumber;
+                player--;
 
-            if (peopleNumber > 0 && peopleNumber < 4) {
-                System.out.println(" - Количество выбранных человеком спичек: " + peopleNumber);
-                setRemainedMatches(getRemainedMatches() - peopleNumber);
-//                consoleMessages.callRemainedMatches();
-                System.out.println("На столе осталось " + getRemainedMatches() + " спичек");
-            } else if (peopleNumber > 3) {
-                System.out.print("Вы не можете вводить больше 3, попробуйте снова.\nВведите число: ");
-                int peopleNumberRepeat = sc.nextInt();
-                System.out.println(" - Количество выбранных человеком спичек: " + peopleNumberRepeat);
-                setRemainedMatches(getSetRemainedMatches() - peopleNumberRepeat);
-//                consoleMessages.callRemainedMatches();
-                System.out.println("На столе осталось " + getRemainedMatches() + " спичек");
-                subtractionMatches = setRemainedMatches;
+                if (matches < 2) {
+                    consoleMessages.youLose();
+                } else {
+                    System.out.print("На столе осталось " + matches + " спичек \n - Ход игрока. Введите количество спичек: ");
+
+                    int playerX = scanner.nextInt();
+
+                    if (playerX < 1 || playerX > 3) {
+                        rep:
+                        while (true) {
+                            System.out.print("Ошибка!\nВведите число от 1 до 3: ");
+                            int playerY = scanner.nextInt();
+                            if (playerY < 1 || playerY > 3) {
+                                continue rep;
+                            }
+                            matches -= playerY;
+                            player--;
+                            break;
+                        }
+                    } else {
+                        matches -= playerX;
+                        player--;
+
+                        if (matches < 2) {
+                            consoleMessages.compLose();
+                        }
+                    }
+                }
             }
         }
     }
